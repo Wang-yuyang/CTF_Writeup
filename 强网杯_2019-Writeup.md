@@ -1,6 +1,6 @@
 # 强网杯2019-Writeup
 
-### 随便注：
+## 随便注
 
 ![1576313506162](强网杯_2019-Writeup.assets/1576313506162.png)
 
@@ -65,3 +65,18 @@ show columns from words;#`
 >
 
 构造:`/?inject=1 ' or '1'='1';#` 获得Flag！
+
+#### 总结：
+
+> 
+
+
+
+
+
+## 高明的黑客
+
+按照提示，下载了“www.tar.gz”网站源码；下载后发现几百个文件，蒙蔽！直接找[Writeup](https://www.ctfwp.com/articals/2019qiangwang.html#%E9%AB%98%E6%98%8E%E7%9A%84%E9%BB%91%E5%AE%A2)
+
+写一个脚本批量扫描”_GET"和" _POST"，传播一些特定的代码（ 比如 echo("glzjin"); /echo("glzjin") / echo glzjin，eval，assert，system 函数需要分别处理，一个文件需要用几种姿势多测几次)看看能执行不，能执行返回这种特定的字符串就说明此处可用。 
+
